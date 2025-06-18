@@ -6,7 +6,7 @@ body {
   text-align: center;
 }
 
-/* to modify header*/
+
 header {
   text-align: center;
   background: #b1c0a4;
@@ -82,7 +82,7 @@ section {
 .goals-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -190,7 +190,6 @@ button:hover {
   text-align: center;
 }
 
-/* Embedded iframe (games, Spotify) */
 iframe {
   width: 255px;
   border-radius: 10px;

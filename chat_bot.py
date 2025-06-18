@@ -37,7 +37,6 @@ def ask_ollama(prompt):
         res = requests.post(OLLAMA_URL, json=payload)
         res.raise_for_status()
         data = res.json()
-        # Show only the last line of the response
         return data["message"]["content"].strip().splitlines()[-1]
     except Exception as e:
         return f"Error: {str(e)}"

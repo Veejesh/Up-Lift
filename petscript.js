@@ -45,12 +45,12 @@ function cleanPet() {
 }
 
 
-// Simulate time passing (hunger increases)
+
 setInterval(() => {
   hunger += 1;
   if (hunger > 100) hunger = 100;
   updateStats();
-}, 5000); // Every 5 seconds
+}, 5000); 
 
 updateStats();
 
