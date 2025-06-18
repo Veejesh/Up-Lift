@@ -75,68 +75,63 @@ section {
   margin: 0.5rem 0;
 }
 
-/* Health-style card for all goals */
-.goal {
-  position: relative;
-  background-image: url('images/homepage.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 120px;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+.moodboard {
   text-align: center;
-  font-size: 0.9rem;
-}
-
-.goal:hover {
-  transform: scale(1.03);
-}
-
-.goal a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
-}
-
-.goal .overlay {
-  background: rgba(255, 255, 255, 0.7);
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  padding-top: 25px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-}
-
-.goal .emoji {
-  font-size: 1.8em;
-  display: block;
-}
-
-.goal .text {
-  font-weight: bold;
-  margin-top: 5px;
-  font-size: 1em;
 }
 
 .goals-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 0.5rem;
-  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center horizontally */
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.goal {
+  width: 130px;
+  height: 130px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.goal:hover {
+  transform: scale(1.05);
+}
+
+.goal a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px;
 }
 
 .icon {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
 }
 
+.text {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #333;
+}
 
 /* Form */
 form {
