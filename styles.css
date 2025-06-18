@@ -9,7 +9,7 @@ body {
 /* to modify header*/
 header {
   text-align: center;
-  background: #8ba376;
+  background: #b1c0a4;
   padding-bottom: 10px;
 }
 
@@ -22,9 +22,9 @@ header {
 }
 .footer{
   width:100%;
-  height:50%;
-  max-height: 250px;
-  object-fit: cover;
+  height:auto;
+  max-height: 300px;
+  object-fit: fill;
 }
 
 h1 {
