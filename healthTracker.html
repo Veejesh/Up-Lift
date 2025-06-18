@@ -1,53 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Health Tracker</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    textarea {
-      width: 100%;
-      height: 100px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Daily Health Tracker</title>
+  <link rel="stylesheet" href="healthTracker.css" />
 </head>
 <body>
-  <h1> Your Health Status</h1>
-  
+
+  <h1>🧘‍♀️ Daily Health Tracker</h1>
+
   <form id="healthForm">
-    <label for="status">Enter your health update:</label><br><br>
-    <textarea id="status" name="status" placeholder="e.g., Walked 5km today, feeling great!"></textarea><br><br>
+    <label for="status">Health Update</label>
+    <textarea id="status" placeholder="e.g., Walked 5km today, feeling great!"></textarea>
+
+    <label for="sleep">Sleep Duration (hours)</label>
+    <input type="number" id="sleep" placeholder="e.g., 8">
+
+    <label for="water">Water Intake (liters)</label>
+    <input type="number" id="water" placeholder="e.g., 2.5">
+
+    <label for="exercise">Exercise Summary</label>
+    <input type="text" id="exercise" placeholder="e.g., 30 min yoga">
+
     <button type="submit">Save</button>
   </form>
 
-  <h2>📋 Saved Status:</h2>
-  <p id="savedStatus"></p>
+  <h2>📅 Your Entries</h2>
+  <div id="entries"></div>
 
   <script>
     const form = document.getElementById('healthForm');
-    const savedStatus = document.getElementById('savedStatus');
-    const statusInput = document.getElementById('status');
+    const entriesContainer = document.getElementById('entries');
 
-    // Load previously saved status
-    window.onload = () => {
-      const saved = localStorage.getItem('healthStatus');
-      if (saved) savedStatus.textContent = saved;
-    };
+    function loadEntries() {
+      const entries = JSON.parse(localStorage.getItem('healthEntries')) || {};
+      entriesContainer.innerHTML = '';
 
-    // Save status on form submit
-    form.addEventListener('submit', (e) => {
+      Object.keys(entries).reverse().forEach(date => {
+        const entry = entries[date];
+        const entryDiv = document.createElement('div');
+        entryDiv.className = 'entry';
+        entryDiv.innerHTML = `
+          <h3>${date}</h3>
+          <p><strong>Update:</strong> ${entry.status}</p>
+          <p><strong>Sleep:</strong> ${entry.sleep} hrs</p>
+          <p><strong>Water:</strong> ${entry.water} L</p>
+          <p><strong>Exercise:</strong> ${entry.exercise}</p>
+        `;
+        entriesContainer.appendChild(entryDiv);
+      });
+    }
+
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      const status = statusInput.value.trim();
-      if (status) {
-        localStorage.setItem('healthStatus', status);
-        savedStatus.textContent = status;
-        statusInput.value = '';
-        alert('Health status saved!');
+      const status = document.getElementById('status').value.trim();
+      const sleep = document.getElementById('sleep').value;
+      const water = document.getElementById('water').value;
+      const exercise = document.getElementById('exercise').value.trim();
+      const date = new Date().toLocaleDateString();
+
+      if (!status || !sleep || !water || !exercise) {
+        alert('Please fill in all fields');
+        return;
       }
+
+      const entries = JSON.parse(localStorage.getItem('healthEntries')) || {};
+      entries[date] = { status, sleep, water, exercise };
+      localStorage.setItem('healthEntries', JSON.stringify(entries));
+      
+      form.reset();
+      loadEntries();
     });
+
+    window.onload = loadEntries;
   </script>
+
 </body>
 </html>

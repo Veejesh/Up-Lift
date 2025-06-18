@@ -9,7 +9,7 @@ body {
 /* to modify header*/
 header {
   text-align: center;
-  background: #ffffff;
+  background: #8ba376;
   padding-bottom: 10px;
 }
 
@@ -20,6 +20,12 @@ header {
   object-fit: cover;
   display: block;
 }
+.footer{
+  width:100%;
+  height:50%;
+  max-height: 250px;
+  object-fit: cover;
+}
 
 h1 {
   font-size: 3rem;
@@ -27,8 +33,8 @@ h1 {
 }
 
 .quote {
-  font-size: 0.9rem;
-  color: #888;
+  font-size: 1rem;
+  color: #000000;
 }
 
 main {
@@ -39,12 +45,13 @@ main {
 }
 
 section {
-  background: #fffaf0;
+  background: #6b9f66;
   padding: 1rem;
   border-radius: 10px;
 }
 
 .left {
+  background: #e0e7ce;
   flex: 1;
   min-width: 200px;
   max-width: 250px;
