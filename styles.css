@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  font-family: 'Times New Roman', serif;
+  background: #fffdf5;
+  color: #333;
+  text-align: center;
+}
+
+/* to modify header*/
+header {
+  text-align: center;
+  background: #ffffff;
+  padding-bottom: 10px;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.5em 0 0.2em;
+}
+
+.quote {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+section {
+  background: #fffaf0;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.left {
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.right {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.center {
+  flex: 2;
+  min-width: 300px;
+}
+
+.daily ul, .personal ul, .misc ul, .schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+/* Health-style card for all goals */
+.goal {
+  position: relative;
+  background-image: url('images/homepage.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.goal:hover {
+  transform: scale(1.03);
+}
+
+.goal a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.goal .overlay {
+  background: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 25px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.goal .emoji {
+  font-size: 1.8em;
+  display: block;
+}
+
+.goal .text {
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Form */
+form {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ABD;
+}
+
+#confirmation {
+  margin-top: 15px;
+  font-size: 14px;
+  color: green;
+  text-align: center;
+}
+
+/* Embedded iframe (games, Spotify) */
+iframe {
+  width: 255px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
